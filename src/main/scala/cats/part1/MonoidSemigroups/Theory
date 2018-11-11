@@ -1,0 +1,11 @@
+Monoids and semigroups
+
+Monoid for a type A:
+    an operation: combine (A, A) => A
+    empty element: empty: A
+    Laws:
+        Combine Associativity
+        Empty must be an identity element
+
+Semigroup - Monoid without Empty element
+Ex: NonEmptyList

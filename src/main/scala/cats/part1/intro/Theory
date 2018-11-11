@@ -1,0 +1,21 @@
+Imports
+  import cats._ //All typeClasses
+  import cats.instances.all._ // All typeClasses Instances
+  import syntax.all._ // All typeClasses Syntax
+  import cats.implicits._ //All typeClass instances and syntax
+
+
+
+
+Implict scope
+  * 1) local or inherited objects
+  * 2) imported definition
+  * 3) definitions in companion object of type class or type parameter
+  */
+
+
+Searching for implicits - look for one matching Type or Subtype
+
+  //                                Inv       Cov     ContraV
+  //Supertype instance used?        No        No      Yes
+  //More specific type preferred?   No        Yes     No
