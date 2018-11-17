@@ -1,2 +1,42 @@
-Functor
+Functor F[A]
     map[A, B](f: A => B): F[B]
+
+Laws
+    Identity:
+        fa.map(a => a) == fa
+    Composition:
+        fa.map(g(f(_))) == fa.map(f).map(g)
+
+High Kinded types
+List // type constructor, takes 1 parameter
+List[A] // type
+
+------------
+Contravariant and Invariant Functors
+
+Contravariant Functor (contramap)
+    contramap - prepending operation to chain
+    transformation
+Invariant Functor (imap)
+    bidirectional transformation
+
+Subtyping -> as Conversion
+    If B is subtype of A
+    B converts to A, there is func B => A
+
+    F[_] - covariant functor | A => B   we can F[A] => F[B]
+
+    F[_] - contravriant | B => A we can F[B] => F[A]
+
+    F[_] - invariant | A => B + B => A we can F[A] => F[B] + F[B] => F[A]
+
+--------------
+Partial Unification
+    "-Ypartial-unification" enables Left-toRight Partial unification
+    A => B (Function1[A, B])
+    Function1[A, ?]
+
+    If we need right to left - do it manually with
+    type <=[B, A] = A => B
+    A <= B
+    FunctionB[?, B]
