@@ -1,0 +1,31 @@
+Monad
+    mechanism for sequencing computations
+    Option - sequence computation that may or may not return values
+
+    pure, of type A => F[A];
+    flatMap, of type (F[A], A => F[B]) => F[B].
+
+    Laws
+        Left Identity:
+            pure(a).flatMap(func) == func(a)
+        Right Identity:
+            m.flatMap(pure) == m
+        Associativity:
+            m.flatMap(f).flatMap(g) == m.flatMap(x => f(x).flatMap(g))
+
+-------------
+In cats Monad extends FlatMap (flatMap) and Applicative (pure)
+Applicative extends Functor
+------------
+IdentityMonad Id
+    wraps values in Monad
+    abstract over monadic and non-monadic call
+------------
+MonadError[F, E] - abstracts over Either
+F - type of monad
+E - type of error
+------------
+Eval Monad
+ abstracts over different models of evaluation.
+ Eager, lazy, memoized
+
